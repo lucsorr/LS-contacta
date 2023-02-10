@@ -9,7 +9,10 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+
 roadmap.md
+features.md
+
 
 # Used by dotenv library to load environment variables.
 # .env
