@@ -4,6 +4,8 @@ require 'sinatra/content_for'
 require 'securerandom'
 require 'tilt/erubis'
 
+SESSION_SECRET = "56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d".freeze
+
 get '/' do
   # redirect('/users/signin') unless user_logged_in?
 
