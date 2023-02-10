@@ -4,33 +4,35 @@ require 'sinatra/content_for'
 require 'securerandom'
 require 'tilt/erubis'
 
-SESSION_SECRET = "56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d".freeze
+SESSION_SECRET ||= "56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d".freeze
+
+configure do
+  set :erb, :escape_html => true
+end
+# Routes
 
 get '/' do
   # redirect('/users/signin') unless user_logged_in?
 
-  erb :index
+  redirect('/contacts')
 end
 
-get '/signin' do
+get '/users/signin' do
+  erb :sign_in
 end
 
 get '/contacts' do
+  erb :contacts
 end
 
-get '/new_user' do
+get '/contacts/new' do
+  erb :new_contact
 end
 
-get '/contacts/new' do 
+post '/contacts/new' do
+
 end
 
-
-# 1. not logged in
-
-# 2. sign in
-
-# 3. create new user
-
-# 4. contacts (cards) (main) (home screen when user logged in)
-
-# 5. create new contact
+get '/users/new' do
+  erb :new_user
+end

@@ -10,19 +10,17 @@
 </head>
 <body>
     <nav class="navbar-container">
-      <div class="logo"><h2><a href="#">Contact<span class="logo-a">a</span></a></h2></div>
-      <div class="new_contact"><a href="#">New Contact</a></div>
-      <div class="search"><a href="#">Search</a></div>
-      <div class="logout"><a href="#">Logout</a></div>
+      <div class="logo"><h2><a href="/">Contact<span class="logo-a">a</span></a></h2></div>
+
+      <%== yield_content :navbar_links %>
+
       <div class="copyright">© 2023 Contacta by Lucas Sorribes.</div>
     </nav>
 
     <div class="main-container">
-      <div class="main-header">
-        Main header
-      </div>
+      <%== yield_content :header %>
+
       <div class="main">
-        Main (card) area
         <%== yield %>
       </div>
     </div>
