@@ -12,6 +12,7 @@
 
 roadmap.md
 features.md
+.tofix
 
 
 # Used by dotenv library to load environment variables.
