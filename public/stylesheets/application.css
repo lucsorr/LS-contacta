@@ -1,0 +1,76 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Body */
+
+body {
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header-container, .footer-container {
+  height: 75px;
+  flex: initial;
+}
+
+/* Header */
+
+.header-container {
+  color: #fff;
+  background-color: #a7bcd4;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 300px;
+  align-items: center;
+  height: 75px;
+  flex: initial;
+}
+
+.logo-a, .new_contact {
+  color: aquamarine;
+}
+
+.header-container a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.new_contact {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Main */
+
+.main-container {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: auto;
+}
+
+/* Footer */
+
+.footer-container {
+  margin-top: auto;
+  color: #fff;
+  background-color: #a7bcd4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: initial;
+}
+
