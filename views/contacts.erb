@@ -9,3 +9,9 @@
     Main header
   </div>
 <% end %>
+
+<% if @contacts.empty? %>
+  <%= "You have no contacts!" %>
+<% else %>
+  <%= @contacts %>
+<% end %>

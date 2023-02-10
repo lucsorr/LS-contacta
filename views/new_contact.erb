@@ -4,4 +4,32 @@
   <div class="logout"><a href="/users/logout">Logout</a></div>
 <% end %>
 
-New contact page
+<form action="/contacts/new" method="post" class="new-contact-form">
+    <label for="name">Name: </label>
+    <input type="text" name="name" maxlength="30" required>
+
+    <label for="category">Choose a category:</label>
+    <select name="category" required>
+        <option value="">--Choose a category--</option>
+        <option value="family">Family</option>
+        <option value="friends">Friends</option>
+        <option value="professional">Professional</option>
+    </select>
+
+    <label for="job">Job: </label>
+    <input type="text" name="job" maxlength="30" required>
+
+    <label for="email">Email: </label>
+    <input type="email" name="email" maxlength="30" required>
+
+    <label for="phone_number">Phone number: </label>
+    <input type="number" name="phone_number" maxlength="30" required>
+
+    <label for="city">City: </label>
+    <input type="text" name="city" maxlength="30" required>
+
+    <label for="notes">Notes: </label>
+    <textarea name="notes" class="notes-input" rows="5" cols="33" maxlength="140"></textarea>
+
+    <input type="submit" value="Add new contact!">
+</form>

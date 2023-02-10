@@ -1,1 +1,7 @@
-New user page
+<form action="/users/new" method="post" class="new-user-form">
+    <label for="username">Enter your username: </label>
+    <input type="text" name="username" maxlength="30" required>
+    <label for="password">Enter your password: </label>
+    <input type="password" name="password" maxlength="30" required>
+    <input type="submit" value="Create new user">
+</form>
