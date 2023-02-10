@@ -9,20 +9,22 @@
   <link rel="stylesheet" href="/stylesheets/application.css">
 </head>
 <body>
-    <div class="header-container">
-      <div class="logo"><h2><a href="#">Contact</a><span class="logo-a">a</span></h2></div>
+    <nav class="navbar-container">
+      <div class="logo"><h2><a href="#">Contact<span class="logo-a">a</span></a></h2></div>
       <div class="new_contact"><a href="#">New Contact</a></div>
       <div class="search"><a href="#">Search</a></div>
       <div class="logout"><a href="#">Logout</a></div>
-    </div>
+      <div class="copyright">© 2023 Contacta by Lucas Sorribes.</div>
+    </nav>
 
     <div class="main-container">
-      aloha
-      <%== yield %>
-    </div>
-
-    <div class="footer-container">
-      <div class="copyright">© 2023 Contacta by Lucas Sorribes.</div>
+      <div class="main-header">
+        Main header
+      </div>
+      <div class="main">
+        Main (card) area
+        <%== yield %>
+      </div>
     </div>
 </body>
 </html>
