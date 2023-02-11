@@ -74,7 +74,7 @@ get '/contacts' do
 
   require_logged_in_profile
 
-  @contacts = profile[:contacts]
+  @contacts = profile[:contacts].sort_by { |_, data| data['name'].downcase }
 
   erb :contacts
 end
