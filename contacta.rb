@@ -4,7 +4,6 @@ require 'sinatra/content_for'
 require 'securerandom'
 require 'tilt/erubis'
 require 'bcrypt'
-require 'yaml'
 
 require_relative 'profile'
 require_relative 'input_validation'
