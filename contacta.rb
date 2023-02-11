@@ -20,6 +20,7 @@ end
 # Routes
 
 get '/' do
+  session[:profiles] ||= {}
   redirect '/profiles/signin' unless profile_logged_in?
 
   redirect '/contacts' 
@@ -31,10 +32,8 @@ end
 
 post '/profiles/new' do
   if valid_credentials?(params[:profile_name], params[:password], new: true)
-    add_profile(params[:profile_name])
-    session[:profile_name] = params[:profile_name]
-    session[:password] = BCrypt::Password.create(params[:password])
-    session[:logged_in] = true
+
+    add_profile(params[:profile_name], params[:password])
 
     redirect '/contacts'
   else
@@ -49,7 +48,7 @@ end
 
 post '/profiles/signin' do
   if valid_credentials?(params[:profile_name], params[:password])
-    session[:logged_in] = true
+    session[:profiles][params[:profile_name]][:logged_in] = true
     redirect '/'
   else
     status 401
@@ -60,8 +59,8 @@ end
 get '/contacts' do
   require_logged_in_profile
 
-  session[:contacts] ||= {}
-  @contacts = session[:contacts]
+  profile[:contacts] ||= {}
+  @contacts = profile[:contacts]
 
   erb :contacts
 end
@@ -69,7 +68,7 @@ end
 get '/contacts/new' do
   require_logged_in_profile
 
-  session[:contacts] ||= {}
+  profile[:contacts] ||= {}
 
   erb :new_contact
 end
@@ -83,7 +82,7 @@ end
 get '/profiles/logout' do
   require_logged_in_profile
 
-  session[:logged_in] = false
+  profile[:logged_in] = false
 
   redirect '/'
 end
