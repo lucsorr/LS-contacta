@@ -18,16 +18,21 @@
   <% @contacts.values.each do |contact| %>
     <div class="card contact">
       <div class="contact-card-left">
-        i
+        <img class="contact-card-logo" src="/images/contact.png" alt="Contact logo">
+        <div class="contact-card-buttons">
+          <input class="contact-card-button-edit" type="button" value="Edit">
+          <input class="contact-card-button-delete" type="button" value="Delet">
+        </div>
       </div>
       <div class="contact-card-right">
+        <p class="name"><%= contact['name'] %></p>
+        <p><%= contact['category'] %></p>
+        <p><%= contact['job'] %></p>
+        <p><%= contact['email'] %></p>
+        <p><%= contact['phone_number'] %></p>
+        <p><%= contact['city'] %></p>
+        <p><%= contact['notes'] %></p>
       </div>
-    </div>
-  
-  
-  
+    </div> 
   <% end %>
-
-
-
 <% end %>
