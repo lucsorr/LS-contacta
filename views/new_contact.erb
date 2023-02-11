@@ -1,7 +1,7 @@
 <% content_for :navbar_links do %>
   <div class="new_contact"><a href="/contacts/new">New Contact</a></div>
   <div class="search"><a href="#">Search</a></div>
-  <div class="logout"><a href="/users/logout">Logout</a></div>
+  <div class="logout"><a href="/profiles/logout">Logout</a></div>
 <% end %>
 
 <form action="/contacts/new" method="post" class="new-contact-form">
@@ -23,7 +23,7 @@
     <input type="email" name="email" maxlength="30" required>
 
     <label for="phone_number">Phone number: </label>
-    <input type="number" name="phone_number" maxlength="30" required>
+    <input type="text" name="phone_number" maxlength="30" required>
 
     <label for="city">City: </label>
     <input type="text" name="city" maxlength="30" required>

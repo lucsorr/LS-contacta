@@ -6,7 +6,7 @@ require 'tilt/erubis'
 require 'bcrypt'
 require 'yaml'
 
-require_relative 'user'
+require_relative 'profile'
 require_relative 'validation'
 
 SESSION_SECRET ||= "56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d".freeze
@@ -17,42 +17,38 @@ configure do
   set :erb, :escape_html => true
 end
 
-before do
-  session[:contacts] ||= {}
-end
-
 # Routes
 
 get '/' do
-  redirect '/users/signin' unless user_logged_in?
+  redirect '/profiles/signin' unless profile_logged_in?
 
   redirect '/contacts' 
 end
 
-get '/users/new' do 
-  erb :new_user
+get '/profiles/new' do 
+  erb :new_profile
 end
 
-post '/users/new' do
-  if valid_credentials?(params[:username], params[:password], new: true)
-    add_user(params[:username])
-    session[:username] = params[:username]
+post '/profiles/new' do
+  if valid_credentials?(params[:profile_name], params[:password], new: true)
+    add_profile(params[:profile_name])
+    session[:profile_name] = params[:profile_name]
     session[:password] = BCrypt::Password.create(params[:password])
     session[:logged_in] = true
 
     redirect '/contacts'
   else
     status 422
-    erb :new_user
+    erb :new_profile
   end
 end
 
-get '/users/signin' do
+get '/profiles/signin' do
   erb :sign_in
 end
 
-post '/users/signin' do
-  if valid_credentials?(params[:username], params[:password])
+post '/profiles/signin' do
+  if valid_credentials?(params[:profile_name], params[:password])
     session[:logged_in] = true
     redirect '/'
   else
@@ -62,16 +58,17 @@ post '/users/signin' do
 end
 
 get '/contacts' do
-  # Cards
-  # If no contacts yet, add button create your new contact (big card)
+  require_logged_in_profile
+
   session[:contacts] ||= {}
-  
   @contacts = session[:contacts]
 
   erb :contacts
 end
 
 get '/contacts/new' do
+  require_logged_in_profile
+
   session[:contacts] ||= {}
 
   erb :new_contact
@@ -83,7 +80,9 @@ post '/contacts/new' do
   redirect '/contacts'
 end
 
-get '/users/logout' do
+get '/profiles/logout' do
+  require_logged_in_profile
+
   session[:logged_in] = false
 
   redirect '/'

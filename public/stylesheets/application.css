@@ -78,13 +78,13 @@ body {
   height: 100vh;
 }
 
-.new-user-form, .new-contact-form {
+.new-profile-form, .new-contact-form {
   display: flex;
   flex-direction: column;
 }
 
-.new-user-form label,
-.new-user-form input[type="submit"],
+.new-profile-form label,
+.new-profile-form input[type="submit"],
 .new-contact-form label, 
 .new-contact-form input[type="submit"] {
   margin-top: 20px;
@@ -92,8 +92,6 @@ body {
 
 .new-contact-form textarea {
   resize: none;
-  max-width: 210px;
-  max-height: 210px;
 }
 
 

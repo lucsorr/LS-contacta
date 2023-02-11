@@ -1,17 +1,18 @@
 <% content_for :navbar_links do %>
   <div class="new_contact"><a href="/contacts/new">New Contact</a></div>
   <div class="search"><a href="#">Search</a></div>
-  <div class="logout"><a href="/users/logout">Logout</a></div>
+  <div class="logout"><a href="/profiles/logout">Logout</a></div>
 <% end %>
 
 <% content_for :header do %>
   <div class="main-header">
     Main header
+    Welcome profile
   </div>
 <% end %>
 
 <% if @contacts.empty? %>
   <%= "You have no contacts!" %>
 <% else %>
-  <%= @contacts %>
+  <%= @contacts.values.join(' ') %>
 <% end %>
