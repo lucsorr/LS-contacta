@@ -16,7 +16,7 @@ configure do
   set :erb, escape_html: true
 end
 
-# Before-routes Filters
+# Before-routes filters
 
 before do
   session[:profiles] ||= {}
@@ -90,6 +90,27 @@ end
 
 post '/contacts/new' do
   store_contact(params)
+
+  redirect '/contacts'
+end
+
+# Edit contact
+get '/contacts/edit/:id' do |id|
+  @data = profile[:contacts][id]
+
+  erb :edit_contact
+end
+
+post '/contacts/edit/:id' do |id|
+  update_contact_data(params, id)
+
+
+  redirect '/contacts'
+end
+
+# Delete contact
+post '/contacts/delete/:id' do |id|
+  profile[:contacts].delete id
 
   redirect '/contacts'
 end

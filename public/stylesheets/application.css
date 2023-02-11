@@ -75,18 +75,18 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 60px 70px;
+  padding: 60px 50px;
   gap: 30px;
 }
 
-.new-contact-form {
+.new-contact-form, .edit-contact-form {
   border: 2px solid blue;
   border-radius: 15px;
   background-color: gray;
   color: white;
 }
 
-.new-profile-form, .new-contact-form {
+.new-profile-form, .new-contact-form, .edit-contact-form {
   display: flex;
   flex-direction: column;
   padding: 0 30px;
@@ -94,6 +94,9 @@ body {
 
 .new-profile-form label,
 .new-profile-form input[type="submit"],
+.edit-contact-form label,
+.edit-contact-form fieldset,
+.edit-contact-form input[type="submit"],
 .new-contact-form label,
 .new-contact-form fieldset,
 .new-contact-form input[type="submit"] {
@@ -101,14 +104,18 @@ body {
 }
 
 .new-contact-form label,
-.new-contact-form fieldset legend {
+.new-contact-form fieldset legend,
+.edit-contact-form label,
+.edit-contact-form fieldset legend {
   margin-bottom: 5px;
 }
 
-.new-contact-form textarea {
+.new-contact-form textarea, 
+.edit-contact-form textarea {
   resize: none;
 }
 
+.edit-contact-form input[value="Edit contact!"],
 .new-contact-form input[value="Add new contact!"] {
   margin-bottom: 20px;
 }

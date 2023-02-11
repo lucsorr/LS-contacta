@@ -15,23 +15,36 @@
 <% if @contacts.empty? %>
   <%= "You have no contacts!" %>
 <% else %>
-  <% @contacts.values.each do |contact| %>
+  <% @contacts.each do |id, data| %>
     <div class="card contact">
       <div class="contact-card-left">
+
         <img class="contact-card-logo" src="/images/contact.png" alt="Contact logo">
+
         <div class="contact-card-buttons">
-          <input class="contact-card-button-edit" type="button" value="Edit">
-          <input class="contact-card-button-delete" type="button" value="Delet">
+
+          <form action="/contacts/edit/<%= id %>" method="get">
+              <button class="contact-card-button edit">Edit</button>
+          </form>
+
+          <form action="/contacts/delete/<%= id %>" method="post">
+              <button class="contact-card-button delete">Dele</button>
+          </form>
+          
         </div>
+
       </div>
+
       <div class="contact-card-right">
-        <p class="name"><%= contact['name'] %></p>
-        <p><%= contact['category'] %></p>
-        <p><%= contact['job'] %></p>
-        <p><%= contact['email'] %></p>
-        <p><%= contact['phone_number'] %></p>
-        <p><%= contact['city'] %></p>
-        <p><%= contact['notes'] %></p>
+
+        <p class="name"><%= data['name'] %></p>
+        <p><%= data['category'] %></p>
+        <p><%= data['job'] %></p>
+        <p><%= data['email'] %></p>
+        <p><%= data['phone_number'] %></p>
+        <p><%= data['city'] %></p>
+        <p><%= data['notes'] %></p>
+        
       </div>
     </div> 
   <% end %>
