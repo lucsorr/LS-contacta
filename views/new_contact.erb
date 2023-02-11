@@ -6,11 +6,11 @@
 <% end %>
 
 <form action="/contacts/new" method="post" class="new-contact-form">
-    <label for="name">Name: </label>
+    <label for="name">*Name: </label>
     <input type="text" name="name" maxlength="30" required>
 
     <fieldset>
-      <legend>Choose a contact category:</legend>
+      <legend>*Choose a contact category:</legend>
 
       <div>
         <input type="radio" name="category" id="family" value="family" checked>
@@ -30,19 +30,18 @@
     </fieldset>
 
     <label for="job">Job: </label>
-    <input type="text" name="job" maxlength="30" required>
+    <input type="text" name="job" maxlength="30">
 
-    <label for="email">Email: </label>
-    <input type="email" name="email" maxlength="30" required>
+    <label for="email">*Email: </label>
+    <input type="email" name="email" maxlength="30">
 
     <label for="phone_number">Phone number: </label>
-    <input type="text" name="phone_number" maxlength="30" required>
+    <input type="text" name="phone_number" maxlength="30">
 
     <label for="city">City: </label>
-    <input type="text" name="city" maxlength="30" required>
+    <input type="text" name="city" maxlength="30">
 
     <label for="notes">Notes: </label>
     <textarea name="notes" class="notes-input" rows="3" cols="30" maxlength="60"></textarea>
-
     <input type="submit" value="Add new contact!">
 </form>

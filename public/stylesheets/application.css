@@ -79,8 +79,11 @@ body {
   gap: 30px;
 }
 
-.main-center .new-contact-form {
+.new-contact-form {
   border: 2px solid blue;
+  border-radius: 15px;
+  background-color: gray;
+  color: white;
 }
 
 .new-profile-form, .new-contact-form {
@@ -97,6 +100,7 @@ body {
   margin-top: 20px;
 }
 
+.new-contact-form label,
 .new-contact-form fieldset legend {
   margin-bottom: 5px;
 }
