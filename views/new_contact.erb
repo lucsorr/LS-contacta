@@ -9,13 +9,25 @@
     <label for="name">Name: </label>
     <input type="text" name="name" maxlength="30" required>
 
-    <label for="category">Choose a category:</label>
-    <select name="category" required>
-        <option value="">--Choose a category--</option>
-        <option value="family">Family</option>
-        <option value="friends">Friends</option>
-        <option value="professional">Professional</option>
-    </select>
+    <fieldset>
+      <legend>Choose a contact category:</legend>
+
+      <div>
+        <input type="radio" name="category" id="family" value="family" checked>
+        <label for="family">Family</label>
+      </div>
+
+      <div>
+        <input type="radio" name="category" id="friends" value="friends">
+        <label for="friends">Friends</label>
+      </div>
+
+      <div>
+        <input type="radio" name="category" id="professional" value="professional">
+        <label for="professional">Professional</label>
+      </div>
+
+    </fieldset>
 
     <label for="job">Job: </label>
     <input type="text" name="job" maxlength="30" required>

@@ -72,27 +72,41 @@ body {
 
 .main-center {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 60px 70px;
   gap: 30px;
 }
 
+.main-center .new-contact-form {
+  border: 2px solid blue;
+}
+
 .new-profile-form, .new-contact-form {
   display: flex;
   flex-direction: column;
+  padding: 0 30px;
 }
 
 .new-profile-form label,
 .new-profile-form input[type="submit"],
-.new-contact-form label, 
+.new-contact-form label,
+.new-contact-form fieldset,
 .new-contact-form input[type="submit"] {
   margin-top: 20px;
 }
 
+.new-contact-form fieldset legend {
+  margin-bottom: 5px;
+}
+
 .new-contact-form textarea {
   resize: none;
+}
+
+.new-contact-form input[value="Add new contact!"] {
+  margin-bottom: 20px;
 }
 
 /* Cards */
@@ -109,6 +123,7 @@ body {
   justify-content: flex-start;
   background-color: gray;
   color: white;
+  font-size: 0.9rem;
 }
 
 .contact-card-left, .contact-card-right {
@@ -119,20 +134,28 @@ body {
 .contact-card-left {
   /* border: 2px solid green; */
   align-items: center;
+  justify-content: space-between;
   padding: 5px 0;
 }
 
 .contact-card-buttons {
   margin-top: auto;
   display: flex;
+  gap: 5px;
 }
 
-.contact-card-button-delete {
+.contact-card-button {
+  font-size: 0.7rem;
+  padding: 0 5px;
+  flex: 1;
+}
+
+.contact-card-button.delete {
   color: white;
   background-color: red;
 }
 
-.contact-card-button-delete:hover {
+.contact-card-button.delete:hover {
   color: blue;
   background-color: orange;
 }
@@ -152,8 +175,8 @@ body {
 }
 
 .contact-card-logo {
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
 }
 
 
