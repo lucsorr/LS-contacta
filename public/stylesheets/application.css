@@ -42,9 +42,14 @@ body {
   font-size: 2rem;
 }
 
+
 .navbar-container a {
   text-decoration: none;
   color: white;
+}
+
+h2 .logo-a {
+  color: orange;
 }
 
 .copyright {
@@ -79,14 +84,14 @@ body {
   gap: 30px;
 }
 
-.new-contact-form, .edit-contact-form {
+.contact-form {
   border: 2px solid blue;
   border-radius: 15px;
   background-color: gray;
   color: white;
 }
 
-.new-profile-form, .new-contact-form, .edit-contact-form {
+.new-profile-form, .contact-form {
   display: flex;
   flex-direction: column;
   padding: 0 30px;
@@ -94,29 +99,22 @@ body {
 
 .new-profile-form label,
 .new-profile-form input[type="submit"],
-.edit-contact-form label,
-.edit-contact-form fieldset,
-.edit-contact-form input[type="submit"],
-.new-contact-form label,
-.new-contact-form fieldset,
-.new-contact-form input[type="submit"] {
+.contact-form label,
+.contact-form fieldset,
+.contact-form input[type="submit"] {
   margin-top: 20px;
 }
 
-.new-contact-form label,
-.new-contact-form fieldset legend,
-.edit-contact-form label,
-.edit-contact-form fieldset legend {
+.contact-form label,
+.contact-form fieldset legend {
   margin-bottom: 5px;
 }
-
-.new-contact-form textarea, 
-.edit-contact-form textarea {
+ 
+.contact-form textarea {
   resize: none;
 }
 
-.edit-contact-form input[value="Edit contact!"],
-.new-contact-form input[value="Add new contact!"] {
+.contact-form input[type="submit"] {
   margin-bottom: 20px;
 }
 
