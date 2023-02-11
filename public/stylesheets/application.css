@@ -57,6 +57,22 @@ h2 .logo-a {
   font-size: 0.75rem;
 }
 
+/* Flash message */
+
+.flash-message {
+  position: absolute;
+  left: 39vw;
+  top: 93px;
+  border: 3px solid coral;
+  background-color: rgba(0, 0, 0, .5);
+  width: 480px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 /* Right Main area */
 
 .main-container {
@@ -77,10 +93,10 @@ h2 .logo-a {
 
 .main-center {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  padding: 60px 50px;
+  padding: 60px;
   gap: 30px;
 }
 
@@ -89,6 +105,8 @@ h2 .logo-a {
   border-radius: 15px;
   background-color: gray;
   color: white;
+  margin-left: 180px;
+  margin-top: 40px;
 }
 
 .new-profile-form, .contact-form {
@@ -103,11 +121,11 @@ h2 .logo-a {
 .contact-form fieldset,
 .contact-form input[type="submit"] {
   margin-top: 20px;
+  margin-bottom: 5px;
 }
 
-.contact-form label,
-.contact-form fieldset legend {
-  margin-bottom: 5px;
+.contact-form fieldset {
+  margin-bottom: -10px;
 }
  
 .contact-form textarea {
@@ -117,6 +135,7 @@ h2 .logo-a {
 .contact-form input[type="submit"] {
   margin-bottom: 20px;
 }
+
 
 /* Cards */
 

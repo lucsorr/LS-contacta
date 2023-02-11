@@ -12,6 +12,16 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <% if session[:error] %>
+      <div class="flash-message error">
+        <%= session.delete :error %>
+      </div>
+    <% elsif session[:success] %>
+      <div class="flash-message success">
+        <%= session.delete :success %>
+      </div>
+    <% end %>
+
     <nav class="navbar-container">
       <div class="logo">
         <h2>
