@@ -15,5 +15,19 @@
 <% if @contacts.empty? %>
   <%= "You have no contacts!" %>
 <% else %>
-  <%= @contacts.values.join(' ') %>
+  <% @contacts.values.each do |contact| %>
+    <div class="card contact">
+      <div class="contact-card-left">
+        i
+      </div>
+      <div class="contact-card-right">
+      </div>
+    </div>
+  
+  
+  
+  <% end %>
+
+
+
 <% end %>
