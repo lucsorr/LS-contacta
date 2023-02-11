@@ -46,7 +46,7 @@ post '/profiles/new' do
     redirect '/contacts'
   else
     status 422
-    session[:error] = 'The name or password must contain at least 3 letters or numbers.'
+    session[:error] = ERROR_PROFILE_INPUT
     erb :new_profile
   end
 end
@@ -70,21 +70,14 @@ end
 
 # Display profile contacts
 get '/contacts' do
-  profile[:contacts] ||= {}
-
   require_logged_in_profile
-
   @contacts = profile[:contacts].sort_by { |_, data| data['name'].downcase }
-
   erb :contacts
 end
 
 # Add new contact
 get '/contacts/new' do
-  profile[:contacts] ||= {}
-
   require_logged_in_profile
-
   erb :new_contact
 end
 
@@ -96,8 +89,8 @@ end
 
 # Edit contact
 get '/contacts/edit/:id' do |id|
+  require_logged_in_profile
   @data = profile[:contacts][id]
-
   erb :edit_contact
 end
 
@@ -117,8 +110,6 @@ end
 # Profile logout
 get '/profiles/logout' do
   require_logged_in_profile
-
   profile[:logged_in] = false
-
   redirect '/'
 end
