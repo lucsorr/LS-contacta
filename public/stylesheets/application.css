@@ -63,7 +63,7 @@ body {
 
 .main-header {
   border-bottom: 2px solid gray;
-  height: 160px;
+  height: 130px;
   flex: 0 1 auto;
   display: flex;
   justify-content: center;
