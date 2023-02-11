@@ -109,41 +109,34 @@ h2 .logo-a {
   gap: 30px;
 }
 
-.contact-form, .signin-form, .new-profile-form {
+.main-form {
   border: 2px solid blue;
   border-radius: 15px;
   background-color: gray;
   color: white;
   margin-left: 180px;
   margin-top: 40px;
-}
-
-.new-profile-form, .contact-form, .signin-form {
   display: flex;
   flex-direction: column;
   padding: 0 30px;
 }
 
-.new-profile-form label,
-.new-profile-form input[type="submit"],
-.contact-form label,
-.contact-form fieldset,
-.contact-form input[type="submit"],
-.signin-form label,
-.signin-form input[type="submit"] {
-  margin-top: 20px;
+.main-form label,
+.main-form input[type="submit"] {
+  margin: 20px 0px;
   margin-bottom: 5px;
 }
 
-.contact-form fieldset {
+.main-form fieldset {
+  margin-top: 15px;
   margin-bottom: -10px;
 }
  
-.contact-form textarea {
+.main-form textarea {
   resize: none;
 }
 
-.contact-form input[type="submit"] {
+.main-form input[type="submit"] {
   margin-bottom: 20px;
 }
 
