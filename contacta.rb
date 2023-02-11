@@ -1,5 +1,5 @@
 require 'sinatra'
-require "sinatra/reloader" if development?
+require 'sinatra/reloader' if development?
 require 'sinatra/content_for'
 require 'securerandom'
 require 'tilt/erubis'
@@ -9,24 +9,35 @@ require 'yaml'
 require_relative 'profile'
 require_relative 'validation'
 
-SESSION_SECRET ||= "56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d".freeze
+SESSION_SECRET ||= '56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d'.freeze
 
 configure do
   enable :sessions
   set :session_secret, SESSION_SECRET
-  set :erb, :escape_html => true
+  set :erb, escape_html: true
+end
+
+# Before-routes Filters
+
+before do
+  session[:profiles] ||= {}
+end
+
+before '/contacts/*' do
+  profile[:contacts] ||= {}
 end
 
 # Routes
 
+# Index page
 get '/' do
-  session[:profiles] ||= {}
   redirect '/profiles/signin' unless profile_logged_in?
 
-  redirect '/contacts' 
+  redirect '/contacts'
 end
 
-get '/profiles/new' do 
+# Add new profile/user
+get '/profiles/new' do
   erb :new_profile
 end
 
@@ -42,6 +53,7 @@ post '/profiles/new' do
   end
 end
 
+# Profile signin
 get '/profiles/signin' do
   erb :sign_in
 end
@@ -49,6 +61,7 @@ end
 post '/profiles/signin' do
   if valid_credentials?(params[:profile_name], params[:password])
     session[:profiles][params[:profile_name]][:logged_in] = true
+
     redirect '/'
   else
     status 401
@@ -56,19 +69,22 @@ post '/profiles/signin' do
   end
 end
 
+# Display profile contacts
 get '/contacts' do
+  profile[:contacts] ||= {}
+
   require_logged_in_profile
 
-  profile[:contacts] ||= {}
   @contacts = profile[:contacts]
 
   erb :contacts
 end
 
+# Add new contact
 get '/contacts/new' do
-  require_logged_in_profile
-
   profile[:contacts] ||= {}
+
+  require_logged_in_profile
 
   erb :new_contact
 end
@@ -79,6 +95,7 @@ post '/contacts/new' do
   redirect '/contacts'
 end
 
+# Profile logout
 get '/profiles/logout' do
   require_logged_in_profile
 
@@ -86,4 +103,3 @@ get '/profiles/logout' do
 
   redirect '/'
 end
-
