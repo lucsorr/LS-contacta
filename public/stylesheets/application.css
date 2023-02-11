@@ -109,7 +109,7 @@ h2 .logo-a {
   gap: 30px;
 }
 
-.contact-form {
+.contact-form, .signin-form, .new-profile-form {
   border: 2px solid blue;
   border-radius: 15px;
   background-color: gray;
@@ -118,7 +118,7 @@ h2 .logo-a {
   margin-top: 40px;
 }
 
-.new-profile-form, .contact-form {
+.new-profile-form, .contact-form, .signin-form {
   display: flex;
   flex-direction: column;
   padding: 0 30px;
@@ -128,7 +128,9 @@ h2 .logo-a {
 .new-profile-form input[type="submit"],
 .contact-form label,
 .contact-form fieldset,
-.contact-form input[type="submit"] {
+.contact-form input[type="submit"],
+.signin-form label,
+.signin-form input[type="submit"] {
   margin-top: 20px;
   margin-bottom: 5px;
 }

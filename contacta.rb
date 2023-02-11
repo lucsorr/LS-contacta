@@ -7,6 +7,7 @@ require 'bcrypt'
 
 require_relative 'profile'
 require_relative 'input_validation'
+require_relative 'messages'
 
 SESSION_SECRET ||= '56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d'.freeze
 
@@ -31,7 +32,6 @@ end
 # Index page
 get '/' do
   redirect '/profiles/signin' unless profile_logged_in?
-
   redirect '/contacts'
 end
 
@@ -42,12 +42,11 @@ end
 
 post '/profiles/new' do
   if valid_credentials?(params[:profile_name], params[:password], new: true)
-
     add_profile(params[:profile_name], params[:password])
-
     redirect '/contacts'
   else
     status 422
+    session[:error] = 'The name or password must contain at least 3 letters or numbers.'
     erb :new_profile
   end
 end
@@ -60,10 +59,11 @@ end
 post '/profiles/signin' do
   if valid_credentials?(params[:profile_name], params[:password])
     session[:profiles][params[:profile_name]][:logged_in] = true
-
+    session[:success] = "Welcome, #{current_profile}!"
     redirect '/'
   else
     status 401
+    session[:error] = ERROR_INVALID_CREDENTIALS
     erb :sign_in
   end
 end
@@ -90,7 +90,7 @@ end
 
 post '/contacts/new' do
   store_contact(params)
-
+  session[:success] = SUCCESS_NEW_CONTACT
   redirect '/contacts'
 end
 
@@ -103,15 +103,14 @@ end
 
 post '/contacts/edit/:id' do |id|
   update_contact_data(params, id)
-
-
+  session[:success] = SUCCESS_UPDATE_CONTACT
   redirect '/contacts'
 end
 
 # Delete contact
 post '/contacts/delete/:id' do |id|
   profile[:contacts].delete id
-
+  session[:success] = SUCCESS_DELETE_CONTACT
   redirect '/contacts'
 end
 
