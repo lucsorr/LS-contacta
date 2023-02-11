@@ -7,7 +7,7 @@ require 'bcrypt'
 require 'yaml'
 
 require_relative 'profile'
-require_relative 'validation'
+require_relative 'input_validation'
 
 SESSION_SECRET ||= '56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d'.freeze
 
