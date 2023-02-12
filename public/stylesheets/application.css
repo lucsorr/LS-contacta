@@ -145,7 +145,8 @@ h2 .logo-a {
 
 
 .contact-card {
-  border: 1px solid black;
+  border: 2px solid black;
+  /* border-bottom-width: 2px; */
   border-radius: 15px;
   width: 400px;
   height: 278px;
@@ -154,20 +155,21 @@ h2 .logo-a {
   flex: 0 0 auto;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgb(90, 83, 83);
-  color: white;
+  background-color: rgb(198, 198, 198);
+  color: rgb(31, 29, 29);
   font-size: 0.95rem;
+  box-shadow: 2px 2px 2px rgb(110, 110, 110);
 }
 
 .contact-card .color-header {
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  background-color: pink;
+  /* border-top: 1px solid black; */
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  background-color: rgb(122, 122, 122);
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
   height: 100px;
-  width: 398px;
+  width: 400px;
   flex: 0 0 auto;
 }
 
@@ -183,9 +185,9 @@ h2 .logo-a {
   position: relative;
   top: 25px;
   left: 148px;
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 50px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, .5);
 }
 
 .contact-card > * {
@@ -193,7 +195,6 @@ h2 .logo-a {
 }
 
 .contact-card .data {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -219,21 +220,28 @@ h2 .logo-a {
   width: inherit;
   justify-content: space-between;
   margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .contact-card .notes {
   width: inherit;
   font-style: italic;
   margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .contact-card .buttons {
   display: flex;
+  gap: 8px;
 }
 
 .contact-card-button {
   border: none;
-  background-color: pink;
+  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 
