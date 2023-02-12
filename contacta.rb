@@ -64,7 +64,7 @@ end
 post '/profiles/signin' do
   if valid_credentials?(params[:profile_name], params[:password])
     session[:profiles][params[:profile_name]][:logged_in] = true
-    session[:success] = "#{SUCCESS_WELCOME} #{current_profile}!"
+    session[:success] = "#{SUCCESS_WELCOME} #{current_profile_name}!"
     redirect '/'
   else
     status CLIENT_UNAUTHORIZED

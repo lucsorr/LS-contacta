@@ -162,7 +162,6 @@ h2 .logo-a {
 }
 
 .contact-card .color-header {
-  /* border-top: 1px solid black; */
   border-right: 2px solid black;
   border-left: 2px solid black;
   background-color: rgb(122, 122, 122);
@@ -227,16 +226,16 @@ h2 .logo-a {
   width: inherit;
   justify-content: space-between;
   margin-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .contact-card .notes {
   width: inherit;
   font-style: italic;
   margin-top: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .contact-card .buttons {
