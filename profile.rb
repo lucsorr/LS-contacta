@@ -19,12 +19,11 @@ end
 def store_contact(params)
   contact_id = SecureRandom.hex(4)
   profile[:contacts][contact_id] = {}
-
   params.keys.each { |param| profile[:contacts][contact_id][param] = params[param] }
 end
 
 def update_contact_data(params, id)
-  params.keys.each { |param| profile[:contacts][id][param] = params[param] }
+  params.keys.each { |param| profile[:contacts][id][param] = params[param].strip unless param == 'id' }
 end
 
 def require_logged_in_profile

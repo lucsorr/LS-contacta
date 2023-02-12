@@ -30,15 +30,13 @@
 
       <div>
         <input type="radio" name="category" id="professional" value="professional" 
-          <%= @data['category'] == 'professional' ? 'checked' : '' %>
+          <%= @data['category'] == 'professional' ? 'checked' : nil %>
         >
         <label for="professional">Professional</label>
       </div>
 
     </fieldset>
 
-
-    <%# Add placeholders with current data %>
     <label for="job">Job: </label>
     <input type="text" name="job" maxlength="30" value=<%= @data['job'] %>>
 

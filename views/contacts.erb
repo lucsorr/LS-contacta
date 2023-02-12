@@ -7,7 +7,6 @@
 
 <% content_for :header do %>
   <div class="main-header">
-    Main header
   </div>
 <% end %>
 
@@ -35,15 +34,12 @@
       </div>
 
       <div class="contact-card-right">
+        <% data.each do |key, field| %>
+          <div class="data-field<%= key == 'name' ? ' name': nil %>">
+            <%= field.capitalize %>
+          </div>
+        <% end %>
 
-        <p class="name"><%= data['name'] %></p>
-        <p><%= data['category'].capitalize %></p>
-        <p><%= data['job'].capitalize %></p>
-        <p><%= data['email'].capitalize %></p>
-        <p><%= data['phone_number'].capitalize %></p>
-        <p><%= data['city'].capitalize %></p>
-        <p><%= data['notes'].capitalize %></p>
-        
       </div>
     </div> 
   <% end %>

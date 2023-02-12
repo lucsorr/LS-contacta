@@ -23,7 +23,7 @@ before do
   session[:profiles] ||= {}
 end
 
-before '/contacts/*' do
+before /\/contacts/ do
   profile[:contacts] ||= {}
 end
 
@@ -59,7 +59,7 @@ end
 post '/profiles/signin' do
   if valid_credentials?(params[:profile_name], params[:password])
     session[:profiles][params[:profile_name]][:logged_in] = true
-    session[:success] = "Welcome, #{current_profile}!"
+    session[:success] = "#{SUCCESS_WELCOME} #{current_profile}!"
     redirect '/'
   else
     status 401
