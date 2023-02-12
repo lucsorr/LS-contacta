@@ -142,83 +142,99 @@ h2 .logo-a {
 
 /* Cards ---------------------------------------------------*/
 
-.card.contact {
-  border: 2px solid rgb(172, 168, 168);
-  border-radius: 15px;
-  width: 380px;
-  height: 216px;
-  display: flex;
-  flex: 0 1 auto;
-  padding: 15px 20px;
-  gap: 25px;
-  justify-content: flex-start;
-  background-color: gray;
-  color: white;
-  font-size: 0.85rem;
-}
 
-.contact-card-left, .contact-card-right {
+
+.contact-card {
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 400px;
+  height: 278px;
   display: flex;
   flex-direction: column;
-}
-
-.contact-card-left {
+  flex: 0 0 auto;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-between;
-  padding: 5px 0;
+  background-color: rgb(90, 83, 83);
+  color: white;
+  font-size: 0.95rem;
 }
 
-.contact-card-buttons {
-  margin-top: auto;
+.contact-card .color-header {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  background-color: pink;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  height: 100px;
+  width: 398px;
+  flex: 0 0 auto;
+}
+
+.color-header .header-icons {
+  padding-top: 10px;
   display: flex;
-  gap: 5px;
+  justify-content: space-between;
+}
+
+.color-header .contact-logo {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  top: 25px;
+  left: 148px;
+  border: 3px solid black;
+  border-radius: 50px;
+  background-color: black;
+}
+
+.contact-card > * {
+  padding: 0px 15px;
+}
+
+.contact-card .data {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+
+  padding-top: 10px;
+}
+
+.contact-card .name {
+  font-weight:700;
+  font-size: 1.3rem;
+  margin-top: 45px;
+  margin-bottom: 5px;
+}
+
+.contact-card .job {
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.contact-card .other-data {
+  display: flex;
+  width: inherit;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.contact-card .notes {
+  width: inherit;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.contact-card .buttons {
+  display: flex;
 }
 
 .contact-card-button {
-  font-size: 0.7rem;
-  padding: 0 5px;
-  flex: 1;
+  border: none;
+  background-color: pink;
 }
-
-.contact-card-button.delete {
-  color: white;
-  background-color: red;
-}
-
-.contact-card-button.delete:hover {
-  color: blue;
-  background-color: orange;
-}
-
-.contact-card-right {
-  flex: 0;
-  justify-content: stretch;
-}
-
-.contact-card-right .data-field {
-  height: 25px;
-}
-
-.contact-card-right .data-field {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.data-field.name {
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.contact-card-logo {
-  width: 70px;
-  height: 70px;
-}
-
-
-
-
-
 
 
 
