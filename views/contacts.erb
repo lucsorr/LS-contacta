@@ -36,7 +36,7 @@
       <div class="contact-card-right">
         <% data.each do |key, field| %>
           <div class="data-field<%= key == 'name' ? ' name': nil %>">
-            <%= field.capitalize %>
+            <%= key == 'email' ? field : field.capitalize %>
           </div>
         <% end %>
 
