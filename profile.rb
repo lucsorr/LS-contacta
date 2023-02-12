@@ -1,8 +1,8 @@
 def profile
-  session[:profiles][current_profile]
+  session[:profiles][current_profile_name]
 end
 
-def current_profile
+def current_profile_name
   session[:profiles]&.find { |_, prof| prof[:logged_in] }&.[](0)
 end
 
@@ -13,7 +13,7 @@ def add_profile(name, password)
 end
 
 def profile_logged_in?
-  current_profile && profile[:logged_in]
+  current_profile_name && profile[:logged_in]
 end
 
 def store_contact(parameters)
