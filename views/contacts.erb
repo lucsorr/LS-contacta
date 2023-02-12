@@ -29,13 +29,17 @@
           <% end %>
 
           <div class="buttons">
-          <form action="/contacts/edit/<%= id %>" method="get">
-              <button class="contact-card-button edit"><img src="/images/pencil-box.svg" alt="Edit contact icon"></button>
-          </form>
+            <form action="/contacts/edit/<%= id %>" method="get">
+              <button class="contact-card-button edit">
+                <img src="/images/pencil-box.svg" alt="Edit contact icon">
+              </button>
+            </form>
 
-          <form action="/contacts/delete/<%= id %>" method="post">
-              <button class="contact-card-button delete"><img src="/images/trash.svg" alt="Delete contact icon"></button>
-          </form>
+            <form action="/contacts/delete/<%= id %>" method="post">
+              <button class="contact-card-button delete">
+                <img src="/images/trash.svg" alt="Delete contact icon">
+              </button>
+            </form>
           </div>
         </div>
 

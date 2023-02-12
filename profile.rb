@@ -16,10 +16,13 @@ def profile_logged_in?
   current_profile && profile[:logged_in]
 end
 
-def store_contact(params)
+def store_contact(parameters)
   contact_id = SecureRandom.hex(4)
   profile[:contacts][contact_id] = {}
-  params.keys.each { |param| profile[:contacts][contact_id][param] = params[param] }
+  parameters.keys.each do |param|
+    value = param.match?(/email|category/) ? parameters[param] : parameters[param].capitalize
+    profile[:contacts][contact_id][param] = value
+  end
 end
 
 def update_contact_data(params, id)

@@ -16,14 +16,14 @@
 
       <div>
         <input type="radio" name="category" id="family" value="family" 
-          <%= @data['category'] == 'family' ? 'checked' : '' %>
+          <%= @data['category'] == 'family' ? 'checked' : nil %>
         >
         <label for="family">Family</label>
       </div>
 
       <div>
         <input type="radio" name="category" id="friends" value="friends" 
-          <%= @data['category'] == 'friends' ? 'checked' : '' %>
+          <%= @data['category'] == 'friends' ? 'checked' : nil %>
         >
         <label for="friends">Friends</label>
       </div>
