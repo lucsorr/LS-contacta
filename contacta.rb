@@ -11,6 +11,11 @@ require_relative 'messages'
 
 SESSION_SECRET ||= '56e948b83fa31be8fe371d10c211cae1e979d555473c4fbe76ead56d9d481e5d'.freeze
 
+# Status codes
+
+CLIENT_UNAUTHORIZED = 401
+CLIENT_INVALID_INPUT_CREDENTIALS = 422
+
 configure do
   enable :sessions
   set :session_secret, SESSION_SECRET
@@ -45,7 +50,7 @@ post '/profiles/new' do
     add_profile(params[:profile_name], params[:password])
     redirect '/contacts'
   else
-    status 422
+    status CLIENT_INVALID_INPUT_CREDENTIALS
     session[:error] = ERROR_PROFILE_INPUT
     erb :new_profile
   end
@@ -62,7 +67,7 @@ post '/profiles/signin' do
     session[:success] = "#{SUCCESS_WELCOME} #{current_profile}!"
     redirect '/'
   else
-    status 401
+    status CLIENT_UNAUTHORIZED
     session[:error] = ERROR_INVALID_CREDENTIALS
     erb :sign_in
   end
