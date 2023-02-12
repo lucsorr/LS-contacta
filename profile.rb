@@ -20,7 +20,12 @@ def store_contact(parameters)
   contact_id = SecureRandom.hex(4)
   profile[:contacts][contact_id] = {}
   parameters.keys.each do |param|
-    value = param.match?(/email|category/) ? parameters[param] : parameters[param].capitalize
+    value = 
+      if param.match?(/email|category/) then parameters[param]
+      elsif param.match?(/name/) then parameters[param].split.map(&:capitalize).join(' ')
+      else parameters[param].capitalize
+      end
+
     profile[:contacts][contact_id][param] = value
   end
 end
