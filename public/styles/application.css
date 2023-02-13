@@ -47,7 +47,6 @@ body {
   font-size: 2rem;
 }
 
-
 .navbar-container a {
   text-decoration: none;
   color: var(--light-color);
@@ -57,7 +56,7 @@ body {
   color: lime; 
 }
 
-h2 .logo-a {
+.logo-a {
   color: orange;
 }
 
@@ -93,6 +92,10 @@ h2 .logo-a {
 
 /* Main center area --------------------------------------------*/
 
+.main-container {
+  width: 100vw;
+}
+
 .main-center {
   display: flex;
   flex-wrap: wrap;
@@ -107,7 +110,7 @@ h2 .logo-a {
 /* Forms ------------------------------------------------------ */
 
 .main-form {
-  border: 2px solid blue;
+  border: 2px solid gray;
   border-radius: 15px;
   background-color: var(--secondary-color);
   color: var(--light-color);
@@ -116,12 +119,16 @@ h2 .logo-a {
   display: flex;
   flex-direction: column;
   padding: 0 30px;
+  box-shadow: 2px 2px 2px rgb(94, 93, 93);
 }
 
 .main-form label,
 .main-form input[type="submit"] {
   margin: 20px 0px;
-  margin-bottom: 5px;
+}
+
+.main-form input[type="submit"] {
+  margin-bottom: 20px;
 }
 
 .main-form fieldset {
@@ -129,9 +136,6 @@ h2 .logo-a {
   margin-bottom: -10px;
 }
 
-.main-form input[type="submit"] {
-  margin-bottom: 20px;
-}
 .main-form textarea {
   resize: none;
   font-family: inherit;
@@ -142,7 +146,6 @@ h2 .logo-a {
 
 .contact-card {
   border: 2px solid gray;
-  /* border-bottom-width: 2px; */
   border-radius: 15px;
   width: 400px;
   height: 278px;
@@ -154,7 +157,7 @@ h2 .logo-a {
   background-color: ivory;
   color: rgb(31, 29, 29);
   font-size: 0.95rem;
-  box-shadow: 2px 2px 2px rgb(110, 110, 110);
+  box-shadow: 2px 2px 2px rgb(94, 93, 93);
 }
 
 .contact-card .color-header {
@@ -182,7 +185,7 @@ h2 .logo-a {
   left: 148px;
   border: 2px solid gray;
   border-radius: 50px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   flex: 1;
 }
 
@@ -223,7 +226,6 @@ h2 .logo-a {
   display: flex;
   width: inherit;
   justify-content: space-between;
-  /* margin-top: auto; */
   margin-bottom: 10px;
   padding-left: 25px;
   padding-right: 25px;
@@ -253,10 +255,10 @@ h2 .logo-a {
 }
 
 .contact-card-button:hover {
-  background-color: #8d8d8d;
+  background-color: var(--dark-color);
 }
 
 .contact-card-button:active {
-  background-color: #646464;
+  background-color: var(--secondary-color);
 }
 
