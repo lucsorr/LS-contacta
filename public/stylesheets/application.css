@@ -6,6 +6,15 @@ html {
   box-sizing: inherit;
 }
 
+/* Color variables -----------------------------------------*/
+
+:root {
+  --primary-color: #01488f;
+  --secondary-color: #003c79;
+  --dark-color: #002d5a;
+  --light-color: antiquewhite;
+}
+
 /* Fonts ---------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
@@ -22,8 +31,8 @@ body {
 /* Left navbar ---------------------------------------------------*/
 
 .navbar-container {
-  background-color: gray;
-  color: white;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   font-size: 1.3rem;
   flex: 0 0 220px;
   display: flex;
@@ -31,33 +40,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-
-/* Navbar background animation ------------------------------------ */
-
-.navbar-container {
-  background: linear-gradient(7deg, #2dc8a0, #dd6826, #2632dd);
-  background-size: 600% 600%;
-
-  -webkit-animation: AnimationName 21s ease infinite;
-  -moz-animation: AnimationName 21s ease infinite;
-  animation: AnimationName 21s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-  0%{background-position:54% 0%}
-  50%{background-position:47% 100%}
-  100%{background-position:54% 0%}
-}
-@-moz-keyframes AnimationName {
-  0%{background-position:54% 0%}
-  50%{background-position:47% 100%}
-  100%{background-position:54% 0%}
-}
-@keyframes AnimationName {
-  0%{background-position:54% 0%}
-  50%{background-position:47% 100%}
-  100%{background-position:54% 0%}
 }
 
 .logo {
@@ -68,7 +50,7 @@ body {
 
 .navbar-container a {
   text-decoration: none;
-  color: white;
+  color: var(--light-color);
 }
 
 .navbar-container a:hover {
@@ -109,25 +91,6 @@ h2 .logo-a {
   background-color: rgba(0, 139, 0, .5);
 }
 
-/* Main area ---------------------------------------------------*/
-
-.main-container {
-  flex: auto;
-  background-color: gray;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-header {
-  border-bottom: 2px solid gray;
-  background-color: gray;
-  height: 80px;
-  flex: 0 1 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Main center area --------------------------------------------*/
 
 .main-center {
@@ -136,8 +99,9 @@ h2 .logo-a {
   gap: 0px 0px; 
   padding: 100px 40px 100px 80px;
   gap: 30px;
-  background-color: lightgray;
+  background-color: ivory;
   height: 100%;
+  flex: auto;
 }
 
 .main-form {
@@ -176,7 +140,7 @@ h2 .logo-a {
 
 
 .contact-card {
-  border: 2px solid black;
+  border: 2px solid gray;
   /* border-bottom-width: 2px; */
   border-radius: 15px;
   width: 400px;
@@ -186,16 +150,16 @@ h2 .logo-a {
   flex: 0 0 auto;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgb(198, 198, 198);
+  background-color: var(--light-color);
   color: rgb(31, 29, 29);
   font-size: 0.95rem;
   box-shadow: 2px 2px 2px rgb(110, 110, 110);
 }
 
 .contact-card .color-header {
-  border-right: 2px solid black;
-  border-left: 2px solid black;
-  background-color: rgb(122, 122, 122);
+  border-right: 2px solid gray;
+  border-left: 2px solid gray;
+  background-color: var(--primary-color);
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
   height: 100px;
@@ -215,9 +179,9 @@ h2 .logo-a {
   position: relative;
   top: 25px;
   left: 148px;
-  border: 2px solid black;
+  border: 2px solid gray;
   border-radius: 50px;
-  background-color: #808080;
+  background-color: var(--light-color);
   flex: 1;
 }
 
@@ -257,6 +221,7 @@ h2 .logo-a {
   display: flex;
   width: inherit;
   justify-content: space-between;
+  margin-top: auto;
   margin-bottom: 10px;
   padding-left: 25px;
   padding-right: 25px;
@@ -266,6 +231,7 @@ h2 .logo-a {
   width: inherit;
   font-style: italic;
   margin-top: 5px;
+  margin-bottom: 15px;
   padding-left: 25px;
   padding-right: 25px;
 }
