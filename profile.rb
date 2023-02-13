@@ -26,12 +26,12 @@ def store_contact(parameters)
       else parameters[param].capitalize
       end
 
-    profile[:contacts][contact_id][param] = value
+    profile[:contacts][contact_id][param] = value.strip
   end
 end
 
 def update_contact_data(params, id)
-  params.keys.each { |param| profile[:contacts][id][param] = params[param].strip unless param == 'id' }
+  params.keys.each { |param| (profile[:contacts][id][param] = params[param].strip) unless param == 'id' }
 end
 
 def require_logged_in_profile
