@@ -187,6 +187,7 @@ h2 .logo-a {
   border: 2px solid black;
   border-radius: 50px;
   background-color: #808080;
+  flex: 1;
 }
 
 .contact-logo .logo {
@@ -245,9 +246,14 @@ h2 .logo-a {
 
 .contact-card-button {
   border: none;
+  border-radius: 15px;
   background: transparent;
   margin: 0;
   padding: 0;
+}
+
+.contact-card-button:hover {
+  background-color: #646464;
 }
 
 

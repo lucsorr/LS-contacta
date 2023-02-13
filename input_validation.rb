@@ -12,4 +12,4 @@ end
 
 def valid_password?(password)
   password.match? /[A-Za-z\d]{3,}/
-end 
+end
