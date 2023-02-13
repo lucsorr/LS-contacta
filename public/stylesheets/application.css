@@ -44,6 +44,10 @@ body {
   color: white;
 }
 
+.navbar-container a:hover {
+  color: lime;
+}
+
 h2 .logo-a {
   color: orange;
 }
@@ -58,7 +62,7 @@ h2 .logo-a {
 .flash-message {
   position: absolute;
   left: 39vw;
-  top: 43px;
+  top: 10px;
   border-radius: 3px;
   width: 480px;
   height: 75px;
@@ -103,9 +107,8 @@ h2 .logo-a {
   display: flex;
   flex-wrap: wrap;
   gap: 0px 0px; 
-  padding: 60px 60px 40vh;
+  padding: 100px 40px 100px 80px;
   gap: 30px;
-  border-top-left-radius: 20px;
   background-color: lightgray;
   height: 100%;
 }
@@ -138,6 +141,7 @@ h2 .logo-a {
 }
 .main-form textarea {
   resize: none;
+  text-indent: 0px;
 }
 
 /* Cards ---------------------------------------------------*/
