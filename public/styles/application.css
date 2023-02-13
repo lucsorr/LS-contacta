@@ -104,11 +104,13 @@ h2 .logo-a {
   flex: auto;
 }
 
+/* Forms ------------------------------------------------------ */
+
 .main-form {
   border: 2px solid blue;
   border-radius: 15px;
-  background-color: gray;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
   margin-left: 180px;
   margin-top: 40px;
   display: flex;
