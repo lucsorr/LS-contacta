@@ -99,7 +99,7 @@ h2 .logo-a {
   gap: 0px 0px; 
   padding: 100px 40px 100px 80px;
   gap: 30px;
-  background-color: ivory;
+  background-color: var(--light-color);
   height: 100%;
   flex: auto;
 }
@@ -149,7 +149,7 @@ h2 .logo-a {
   flex: 0 0 auto;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--light-color);
+  background-color: ivory;
   color: rgb(31, 29, 29);
   font-size: 0.95rem;
   box-shadow: 2px 2px 2px rgb(110, 110, 110);
@@ -180,7 +180,7 @@ h2 .logo-a {
   left: 148px;
   border: 2px solid gray;
   border-radius: 50px;
-  background-color: var(--light-color);
+  background-color: var(--secondary-color);
   flex: 1;
 }
 
@@ -213,6 +213,7 @@ h2 .logo-a {
 
 .contact-card .job {
   font-style: italic;
+  height: 25px;
   margin-bottom: 25px;
 }
 
@@ -220,7 +221,7 @@ h2 .logo-a {
   display: flex;
   width: inherit;
   justify-content: space-between;
-  margin-top: auto;
+  /* margin-top: auto; */
   margin-bottom: 10px;
   padding-left: 25px;
   padding-right: 25px;
@@ -229,6 +230,7 @@ h2 .logo-a {
 .contact-card .notes {
   width: inherit;
   font-style: italic;
+  height: 25px;
   margin-top: 5px;
   margin-bottom: 15px;
   padding-left: 25px;

@@ -12,32 +12,32 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <% if session[:error] %>
-      <div class="flash-message error">
-        <%= session.delete :error %>
-      </div>
-    <% elsif session[:success] %>
-      <div class="flash-message success">
-        <%= session.delete :success %>
-      </div>
-    <% end %>
-
-    <nav class="navbar-container">
-      <div class="logo">
-        <h2>
-          <a href="/">Contact<span class="logo-a">a</span></a>
-        </h2>
-      </div>
-
-      <%== yield_content :navbar_links %>
-
-      <div class="copyright">© 2023 Contacta by Lucas Sorribes.</div>
-    </nav>
-
-    <div class="main-container">
-      <div class="main-center">
-        <%== yield %>
-      </div>
+  <% if session[:error] %>
+    <div class="flash-message error">
+      <%= session.delete :error %>
     </div>
+  <% elsif session[:success] %>
+    <div class="flash-message success">
+      <%= session.delete :success %>
+    </div>
+  <% end %>
+
+  <nav class="navbar-container">
+    <div class="logo">
+      <h2>
+        <a href="/">Contact<span class="logo-a">a</span></a>
+      </h2>
+    </div>
+
+    <%== yield_content :navbar_links %>
+
+    <div class="copyright">© 2023 Contacta by Lucas Sorribes.</div>
+  </nav>
+
+  <div class="main-container">
+    <div class="main-center">
+      <%== yield %>
+    </div>
+  </div>
 </body>
 </html>
