@@ -253,8 +253,10 @@ h2 .logo-a {
 }
 
 .contact-card-button:hover {
-  background-color: #646464;
+  background-color: #8d8d8d;
 }
 
-
+.contact-card-button:active {
+  background-color: #646464;
+}
 
