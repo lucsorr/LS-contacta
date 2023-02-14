@@ -140,6 +140,10 @@ body {
   box-shadow: 1px 1px 1px rgb(59, 59, 59);
 }
 
+.main-form input {
+  border-radius: 3px;
+}
+
 .main-form .new-profile-button {
   background-color: #ffa500;
   margin-bottom: 10px
