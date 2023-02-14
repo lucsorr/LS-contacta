@@ -125,10 +125,6 @@ body {
   width: 300px;
 }
 
-.main-form {
-  margin: 10px 0;
-}
-
 .main-form .new-profile-button,
 .main-form input[type="submit"] {
   padding: 10px 20px;
@@ -141,6 +137,7 @@ body {
   border: none;
   margin-top: 10px;
   font: inherit;
+  box-shadow: 1px 1px 1px rgb(59, 59, 59);
 }
 
 .main-form .new-profile-button {
