@@ -1,9 +1,8 @@
 <form action="/profiles/signin" method="post" class="main-form">
     <label for="profile_name">Enter your name: </label>
-    <input type="text" name="profile_name" required>
+    <input type="text" name="profile_name" required value="<%= params[:profile_name]%>">
     <label for="password">Enter your password: </label>
     <input type="password" name="password" required>
     <input type="submit" value="Sign in">
+    <a class="new-profile-button "href="/profiles/new">Create a new profile!</a>
 </form>
-<br>
-<a href="/profiles/new">Create a new account</a>

@@ -118,29 +118,40 @@ body {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  padding: 0 30px;
+  gap: 10px;
+  padding: 15px 30px;
   box-shadow: 2px 2px 2px rgb(77, 77, 77);
-  height: fit-content;
+  height:max-content;
+  width: 300px;
 }
 
-.main-form label,
+.main-form {
+  margin: 10px 0;
+}
+
+.main-form .new-profile-button,
 .main-form input[type="submit"] {
-  margin: 20px 0px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  font: inherit;
 }
 
-.main-form input[type="submit"] {
-  margin-bottom: 20px;
-}
-
-.main-form fieldset {
-  margin-top: 15px;
-  margin-bottom: -10px;
+.main-form .new-profile-button {
+  background-color: #ffa500;
+  margin-bottom: 10px
 }
 
 .main-form textarea {
   resize: none;
-  font-family: inherit;
   font-style: italic;
+  font-family: inherit;
 }
 
 /* Cards ---------------------------------------------------*/
